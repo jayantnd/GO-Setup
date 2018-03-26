@@ -65,14 +65,14 @@ touch "$HOME/.bashrc"
     echo '# GoLang'
     echo 'export GOROOT=/usr/local/go'
     echo 'export PATH=$PATH:$GOROOT/bin'
-    echo 'export GOPATH=$HOME/Work/GoLang'
+    echo 'export GOPATH=$HOME/Workspace/Go'
     echo 'export PATH=$PATH:$GOPATH/bin'
 } >> "$HOME/.bashrc"
 
-mkdir -p $HOME/Work/GoLang/src
-mkdir -p $HOME/Work/GoLang/pkg
-mkdir -p $HOME/Work/GoLang/bin
-chown -R $SUDO_USER:$SUDO_USER $HOME/Work
+mkdir -p $HOME/Workspace/Go/src
+mkdir -p $HOME/Workspace/Go/pkg
+mkdir -p $HOME/Workspace/Go/bin
+chown -R $SUDO_USER:$SUDO_USER $HOME/Workspace
 
 echo -e "\nGo $VERSION is installed successfully.\nMake sure to relogin into your shell or run:"
 echo -e "\n\tsource $HOME/.bashrc\n\n to update your environment variables."
