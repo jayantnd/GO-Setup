@@ -28,7 +28,7 @@ if [ "$1" = "--32" ] || [ "$1" = "--64" ]; then
     which_version $1
 elif [ "$1" = "--remove" ]; then
     rm -rf "/usr/local/go/"
-    sed -i '/# GoLang/d' "$HOME/.bashrc"
+    sed -i '/# GOSetup/d' "$HOME/.bashrc"
     sed -i '/export GOROOT/d' "$HOME/.bashrc"
     sed -i '/:$GOROOT/d' "$HOME/.bashrc"
     sed -i '/export GOPATH/d' "$HOME/.bashrc"
@@ -62,7 +62,7 @@ rm -f /tmp/$DFILE
 
 touch "$HOME/.bashrc"
 {
-    echo '# GoLang'
+    echo '# GOSetup'
     echo 'export GOROOT=/usr/local/go'
     echo 'export PATH=$PATH:$GOROOT/bin'
     echo 'export GOPATH=$HOME/Workspace/Go'

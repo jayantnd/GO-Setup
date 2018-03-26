@@ -23,7 +23,7 @@ if [ "$1" == "--install" ]; then
     which_version
 elif [ "$1" = "--remove" ]; then
     rm -rf "/usr/local/go/"
-    sed -i '' '/# GoLang/d' "$HOME/.profile"
+    sed -i '' '/# GOSetup/d' "$HOME/.profile"
     sed -i '' '/export GOROOT/d' "$HOME/.profile"
     sed -i '' '/:$GOROOT/d' "$HOME/.profile"
     sed -i '' '/export GOPATH/d' "$HOME/.profile"
@@ -58,15 +58,15 @@ rm -f /tmp/$DFILE
 
 touch "$HOME/.profile"
 {
-    echo '# GoLang'
+    echo '# GOSetup'
     echo 'export GOROOT=/usr/local/go'
     echo 'export PATH=$PATH:$GOROOT/bin'
-    echo 'export GOPATH=$HOME/Work/GoLang'
+    echo 'export GOPATH=$HOME/Workspace/Go'
     echo 'export PATH=$PATH:$GOPATH/bin'
 } >> "$HOME/.profile"
 
-mkdir -p $HOME/Work/GoLang/{src,pkg,bin}
-chown -R $(logname) $HOME/Work
+mkdir -p $HOME/Workspace/Go/{src,pkg,bin}
+chown -R $(logname) $HOME/Workspace
 
 echo -e "\nGo $VERSION is installed successfully.\nMake sure to relogin into your shell or run:"
 echo -e "\n\tsource $HOME/.profile\n\n to update your environment variables."
