@@ -7,10 +7,10 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 print_help() {
-    echo "Usage: bash goinstall.sh OPTION"
-    echo -e "\nOPTIONS:"
-    echo -e "  --install\tTo install at /usr/local/go/"
-    echo -e "  --remove\tTo remove current installed version"
+    echo "Easy and quick Golang setup!"
+    echo  "\nOptions:"
+    echo  "  --install\tTo install at /usr/local/go/"
+    echo  "  --remove\tTo remove current installed version"
 }
 
 which_version() {
@@ -68,6 +68,6 @@ touch "$HOME/.bash_profile"
 mkdir -p $HOME/Workspace/Go/{src,pkg,bin}
 chown -R $(logname) $HOME/Workspace
 
-echo -e "\nGo $VERSION is installed successfully.\nMake sure to relogin into your shell or run:"
-echo -e "\n\tsource $HOME/.bash_profile\n\n to update your environment variables."
+echo "\nGo $VERSION is installed successfully.\nMake sure to relogin into your shell or run:"
+echo "\n\tsource $HOME/.bash_profile\n\n to update your environment variables."
 echo "Tip: Opening a new terminal window usually just works. :)"
